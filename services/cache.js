@@ -5,12 +5,15 @@ const chalk = require('chalk');
 // const redisUrl = '';
 const redisPort = '15780';
 
-const client =
-	redis.createClient(process.env.redisUrl) ||
-	redis.createClient({
+let client = '';
+if (process.env.NODE_ENV == 'production') {
+	client = redis.createClient({
 		port: redisPort,
 		host: process.env.REDIS_URL
 	});
+} else {
+	client = redis.createClient(process.env.redisUrl);
+}
 
 client.auth(process.env.redisAuth, function(err, response) {
 	if (err) {
