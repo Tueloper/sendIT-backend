@@ -23,9 +23,9 @@ router.get('/getSingle/order/:id', [ Auth, isUser ], getOneOrder);
 
 router.get('/getAll/orders', [ Auth, isAdmin ], getAllOrder);
 
-router.patch('/update/order/:id', [ Auth, isUser ], updateOrder);
+router.patch('/update/order/:id', [ Auth, isUser, clearNest ], updateOrder);
 
-router.delete('/delete/order/:id', [ Auth, isUser ], deleteOrder);
+router.delete('/delete/order/:id', [ Auth, isUser, clearNest ], deleteOrder);
 
 router.patch('/processing/order/:id', [ Auth, isAdmin ], notifyProcessing);
 
