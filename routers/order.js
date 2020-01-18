@@ -21,14 +21,15 @@ router.get('/getUser/Orders', [ Auth, isUser ], getUserOrders);
 
 router.get('/getSingle/order/:id', [ Auth, isUser ], getOneOrder);
 
-router.get('/getAll/orders', [ Auth, isAdmin ], getAllOrder);
+router.get('/getAll/orders', [ Auth, isAdmin, clearNest ], getAllOrder);
 
 router.patch('/update/order/:id', [ Auth, isUser, clearNest ], updateOrder);
 
 router.delete('/delete/order/:id', [ Auth, isUser, clearNest ], deleteOrder);
 
-router.patch('/processing/order/:id', [ Auth, isAdmin ], notifyProcessing);
+router.patch('/processing/order/:id', [ Auth, isAdmin, clearNest ], notifyProcessing);
 
-router.patch('/delivered/order/:id', [ Auth, isUser ], notifyDelivered);
+router.patch('/delivered/order/:id', [ Auth, isUser, clearNest ], notifyDelivered);
+git;
 
 module.exports = router;
