@@ -19,7 +19,7 @@ router.post('/create/order', [ Auth, isUser, clearNest ], CreateOrder);
 
 router.get('/getUser/Orders', [ Auth, isUser ], getUserOrders);
 
-router.get('/getSingle/order/:id', [ Auth, isUser ], getOneOrder);
+router.get('/getSingle/order/:id', [ Auth, isUser, clearNest ], getOneOrder);
 
 router.get('/getAll/orders', [ Auth, isAdmin, clearNest ], getAllOrder);
 
