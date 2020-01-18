@@ -30,6 +30,5 @@ router.delete('/delete/order/:id', [ Auth, isUser, clearNest ], deleteOrder);
 router.patch('/processing/order/:id', [ Auth, isAdmin, clearNest ], notifyProcessing);
 
 router.patch('/delivered/order/:id', [ Auth, isUser, clearNest ], notifyDelivered);
-git;
 
 module.exports = router;
