@@ -33,8 +33,8 @@ const sendOrderNotification = (user, details) => {
 			\n\nemail -> ${email}
 			\nmoile no -> ${phone}
 			\nprice -> ${details.price}
-			\npickup -> ${details.location}
-			\ndestination -> ${details.destination}
+			\npickup -> ${details.location_address}, ${details.location_state}
+			\ndestination -> ${details.destination_address}, ${details.destination_state}
 			\n This order is to be delivered as soon as possible`
 	};
 
@@ -57,8 +57,8 @@ const sendUserOrderNotification = (user, details) => {
 		\nCheck the details of the order below 
 		\n\nemail -> ${email}
 		\nmoile no -> ${phone}
-		\npickup -> ${details.location}
-		\ndestination -> ${details.destination}
+		\npickup -> ${details.location_address}, ${details.location_state}
+		\ndestination -> ${details.destination_address}, ${details.destination_state}
 		\nPrice -> ${details.price}
 		\n This order is to be delivered as soon as possible`
 	};
