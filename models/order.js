@@ -37,6 +37,12 @@ const orderSchema = mongoose.Schema(
 			trim: true
 		},
 
+		location_cordinates: {
+			type: Array,
+			required: true,
+			trim: true
+		},
+
 		destination_address: {
 			type: String,
 			trim: true
@@ -45,6 +51,16 @@ const orderSchema = mongoose.Schema(
 		destination_state: {
 			type: String,
 			trim: true
+		},
+
+		destination_cordinates: {
+			type: Array,
+			required: true,
+			trim: true
+		},
+
+		travel_distance: {
+			type: String
 		},
 
 		sender_phone_number: {

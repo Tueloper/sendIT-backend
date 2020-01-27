@@ -1,54 +1,56 @@
 {
-  "name": "sendit-backend",
-  "version": "1.0.0",
-  "description": "The backend repository of the KodeHauz sendIT app.",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js --ignore tests",
-    "heroku-postbuild": "npm run build",
-    "build": "babel app.js -d public/",
-    "test": "mocha --timeout 10000 'tests/**/*.js'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kodehauz-bootcamp/sendIT-backend.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kodehauz-bootcamp/sendIT-backend/issues"
-  },
-  "homepage": "https://github.com/kodehauz-bootcamp/sendIT-backend#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "chalk": "^3.0.0",
-    "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "cloudinary": "^1.18.1",
-    "cors": "^2.8.5",
-    "datauri": "^2.0.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mocha": "^6.2.2",
-    "mongodb": "^3.3.4",
-    "mongoose": "^5.7.11",
-    "morgan": "^1.9.1",
-    "redis": "^2.8.0",
-    "multer": "^1.4.2",
-    "nodemailer": "^6.4.0",
-    "sharp": "^0.23.4"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/node": "^7.7.0",
-    "@babel/preset-env": "^7.7.1",
-    "nodemon": "^1.19.4"
-  },
-  "engines": {
-    "node": "10.x"
-  }
+	"name": "sendit-backend",
+	"version": "1.0.0",
+	"description": "The backend repository of the KodeHauz sendIT app.",
+	"main": "index.js",
+	"scripts": {
+		"start": "node app.js",
+		"dev": "nodemon app.js --ignore tests",
+		"heroku-postbuild": "npm run build",
+		"build": "babel app.js -d public/",
+		"test": "mocha --timeout 10000 'tests/**/*.js'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kodehauz-bootcamp/sendIT-backend.git"
+	},
+	"author": "Tochukwu Ozurumba",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kodehauz-bootcamp/sendIT-backend/issues"
+	},
+	"homepage": "https://github.com/kodehauz-bootcamp/sendIT-backend#readme",
+	"dependencies": {
+		"@turf/turf": "^5.1.6",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
+		"chalk": "^3.0.0",
+		"cloudinary": "^1.18.1",
+		"cors": "^2.8.5",
+		"datauri": "^2.0.0",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"jsonwebtoken": "^8.5.1",
+		"mocha": "^6.2.2",
+		"mongodb": "^3.3.4",
+		"mongoose": "^5.7.11",
+		"morgan": "^1.9.1",
+		"multer": "^1.4.2",
+		"nodemailer": "^6.4.0",
+		"redis": "^2.8.0",
+		"sharp": "^0.23.4",
+		"turf-point": "^2.0.1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.7.0",
+		"@babel/core": "^7.7.2",
+		"@babel/node": "^7.7.0",
+		"@babel/preset-env": "^7.7.1",
+		"nodemon": "^1.19.4"
+	},
+	"engines": {
+		"node": "10.x"
+	}
 }

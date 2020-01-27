@@ -11,17 +11,20 @@ if (process.env.NODE_ENV == 'production') {
 		port: redisPort,
 		host: process.env.REDIS_URL
 	});
+
+	client.auth(process.env.redisAuth, function(err, response) {
+		if (err) {
+			throw err;
+		}
+
+		if (response) console.log(chalk.bgMagenta('Redis Is Connected'));
+	});
 } else {
-	client = redis.createClient(process.env.redisUrl);
+	client = redis.createClient(process.env.redisUrl, (err, res) => {
+		if (err) console.log(err.message);
+		if (res) console.log(chalk.red('Redis is connected'));
+	});
 }
-
-client.auth(process.env.redisAuth, function(err, response) {
-	if (err) {
-		throw err;
-	}
-
-	if (response) console.log(chalk.bgMagenta('Redis Is Connected'));
-});
 
 //get redis url
 // const client = redis.createClient(process.env.REDIS_URL);
