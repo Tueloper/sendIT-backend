@@ -1,6 +1,4 @@
 const Order = require('../models/order');
-const generateDistance = require('./../utils/distance');
-const generatePrice = require('./../utils/price');
 const {
 	sendOrderNotification,
 	sendProcessingNotification,
@@ -22,12 +20,6 @@ module.exports = {
 
 		try {
 			const NewOrder = await order.save();
-
-			//calculate the distance
-			await generateDistance(NewOrder);
-
-			//calculate price
-			await generatePrice(NewOrder);
 
 			response.status(201).send({ NewOrder });
 
