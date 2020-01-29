@@ -105,7 +105,7 @@ module.exports = {
 	async updatedUser(request, response) {
 		//setting up validation for the keys to be updated
 		const updates = Object.keys(request.body);
-		const allowable = [ 'full_name', 'phone', 'address' ];
+		const allowable = [ 'full_name', 'phone', 'address', 'email' ];
 		const isValid = updates.every((update) => allowable.includes(update));
 
 		//Prompt invalid order inputs
