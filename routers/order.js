@@ -10,7 +10,8 @@ const {
 	deleteOrder,
 	getAllOrder,
 	notifyProcessing,
-	notifyDelivered
+	notifyDelivered,
+	confirmPayment
 } = require('../controllers/order');
 
 const router = Router();
@@ -30,5 +31,7 @@ router.delete('/delete/order/:id', [ Auth, isUser, clearNest ], deleteOrder);
 router.patch('/processing/order/:id', [ Auth, isAdmin, clearNest ], notifyProcessing);
 
 router.patch('/delivered/order/:id', [ Auth, isUser, clearNest ], notifyDelivered);
+
+router.patch('/order/price', [ Auth, isUser ], confirmPayment);
 
 module.exports = router;

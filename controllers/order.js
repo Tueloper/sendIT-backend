@@ -22,12 +22,6 @@ module.exports = {
 			const NewOrder = await order.save();
 
 			response.status(201).send({ NewOrder });
-
-			//send an email to the admin for the order
-			sendOrderNotification(user, NewOrder);
-
-			//send an email to the user
-			sendUserOrderNotification(user, NewOrder);
 		} catch (err) {
 			response.status(400).send(err);
 		}
@@ -199,6 +193,27 @@ module.exports = {
 
 			//thanking the user
 			orderComplete(_id, user.full_name);
+		} catch (error) {
+			response.status(500).send(error.message);
+		}
+	},
+
+	async confirmPayment(request, response) {
+		const user = request.user;
+		try {
+			const _id = request.body.id;
+			const price = request.body.price;
+			const order = await Order.findOne({ _id });
+
+			order.price = price;
+			await order.save();
+
+			response.status(201).send(order);
+			//send an email to the user
+			sendUserOrderNotification(user, order);
+
+			//send an email to the admin for the order
+			sendOrderNotification(user, order);
 		} catch (error) {
 			response.status(500).send(error.message);
 		}
